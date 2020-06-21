@@ -7,7 +7,7 @@ marquee{
     color:white;
 }
 body {
-    background-image: url('password_validator.jpg');
+    background-image: url('background.jpg');
     margin:0; padding:3px;
     box-sizing:border-box;
     user-select:none;
