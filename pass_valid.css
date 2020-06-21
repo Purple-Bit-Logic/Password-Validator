@@ -1,0 +1,87 @@
+header{
+    text-align:center;
+    color:#000066;
+    background-color:#e6ecff; important!
+}
+marquee{
+    color:white;
+}
+body {
+    background-image: url('password_validator.jpg');
+    margin:0; padding:3px;
+    box-sizing:border-box;
+    user-select:none;
+    font-family: 'Aleo', serif;
+    background-color: rgba(0,0,0, 0.4);
+}
+#set
+{
+    display:block ;
+    position:relative;
+    margin:auto;
+}
+#count
+{
+   display:inline-block;
+   position:relative ;
+   margin:2%; margin-bottom:2%;
+   color:white; font-size:18px;
+   text-indent:40px;
+   font-weight:bolder;
+   
+}
+
+#see
+{
+    display:inline-block ;
+    color:gray;
+    margin:auto; float:right;
+    margin-right:40px;
+    margin-top:10px;
+    cursor:pointer;
+    transition-duration:0.2s;
+    background-color:white;
+}
+
+input[id='password']
+{
+    border:none; width:80%;
+    outline:none;
+    border-bottom:5px solid #efefef;
+    display:block; 
+    position:relative;
+    font-size:27px;
+    text-align:center;
+    top:50px;
+    margin-left:35px;
+    margin-bottom:40px;
+    user-select:auto;
+    font-family: 'Slabo 27px', serif;
+    transition-duration:600ms;
+}
+
+i
+{
+    font-size:23px;
+    transition-duration:600ms;  
+}
+
+#check0,#check1,#check2,#check3,#check4,#check5,#check6
+{
+   display:block;
+   position:relative;
+   margin:2%;
+   color:tomato; font-size:18px;
+   width:92%  ;
+   text-align:center;
+}
+
+span
+{
+    margin:10px;
+}
+
+input:hover
+{
+    border-bottom:5px solid #3498db;
+}

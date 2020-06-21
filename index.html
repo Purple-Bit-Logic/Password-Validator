@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0 ">  -->
+    
+    <link rel="stylesheet" href="pass_valid.css"  type='text/css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css?family=Aleo|Slabo+27px" rel="stylesheet">
+
+    <script>
+    var is_visible = false ;
+
+function see()
+{
+    var input = document.getElementById("password");
+    var see = document.getElementById("see");
+    
+    if(is_visible)
+    {
+        input.type = 'password';
+        is_visible = false; 
+        see.style.color='gray';
+    }
+    else
+    {
+        input.type = 'text';
+        is_visible = true; 
+        see.style.color='#262626';
+    }
+    
+}
+
+function check()
+{
+    var input = document.getElementById("password").value;
+    //var c0=0, c1=0, c2=0, c3=0, c4=0, c5=0, c6=0;
+    
+input=input.trim();
+document.getElementById("password").value=input;
+    document.getElementById("count").innerText="Length : " + input.length;
+    if(input.length>=8 && input.length!=0)
+    {
+        document.getElementById("check0").style.color="#bfff00"; //c0=1;
+    }
+    else
+    {
+       document.getElementById("check0").style.color="tomato"; 
+    }
+    
+    if(input.length<=15)
+    {
+        document.getElementById("check1").style.color="#bfff00"; //c1=1;
+    }
+    else
+    {
+       document.getElementById("check1").style.color="tomato"; 
+    }
+    
+    if(input.match(/[0-9]/i)  && input.length!=0)
+    {
+        document.getElementById("check2").style.color="#bfff00"; //c2=1;
+    }
+    else
+    {
+       document.getElementById("check2").style.color="tomato"; 
+    }
+    
+    if(input.match(/[^A-Za-z0-9-' ']/i) && input.length!=0)
+    {
+        document.getElementById("check3").style.color="#bfff00"; //c3=1;
+    }
+    else
+    {
+       document.getElementById("check3").style.color="tomato"; 
+    }
+    
+    if(input.match(' ') && input.length!=0)
+    {
+        document.getElementById("check4").style.color="tomato";
+    }
+    else
+    {
+       document.getElementById("check4").style.color="#bfff00"; //c4=1;
+    }
+    
+    if(input.match(/^(?=.*[A-Z]).+$/) && input.length!=0)
+    {
+        document.getElementById("check5").style.color="#bfff00"; //c5=1;
+    }
+    else
+    {
+       document.getElementById("check5").style.color="tomato"; 
+    }
+    
+    if(input.match(/^(?=.*[a-z]).+$/) && input.length!=0)
+    {
+        document.getElementById("check6").style.color="#bfff00"; //c6=1;
+    }
+    else
+    {
+       document.getElementById("check6").style.color="tomato"; 
+    }
+    
+}   /* 
+    if(c0=1 && c1=1 && c2=1 && c3=1 && c4=1 && c5=1 && c6=1)
+    alert(Your password is perfect 👍🔐); */
+
+    </script>
+             
+        <title>Password validator</title>
+    </head>
+    <body>
+    
+    <header><h1>Password Validator!</h1></header>
+    <marquee><h3>Let's see how strong your password is ! 🔒🔑</h3></marquee>
+
+     <input type="password" id="password" placeholder="Enter password"
+     onInput="check()" />
+    
+    <br>
+       
+      <div id="set" >
+        
+     <div id="count">Length : 0</div>
+         
+     <i id="see" onclick="see()" class="far fa-eye"></i>
+          
+      </div>
+      
+       
+    <div id="check0">
+      <i class="far fa-check-circle"></i>  <span> Length more than 8.</span>
+    </div>
+     <div id="check1">
+      <i class="far fa-check-circle"></i>  <span> Length less than 15.</span>
+    </div>
+     <div id="check2">
+      <i class="far fa-check-circle"></i>  <span> Contains numerical character.</span>
+    </div>
+     <div id="check3">
+      <i class="far fa-check-circle"></i>   <span>Contains special character.</span>
+      </div>
+       <div id="check4">
+      <i class="far fa-check-circle"></i>  <span>Shouldn't contain spaces.</span>
+    </div>
+       <div id="check5">
+      <i class="far fa-check-circle"></i>  <span>Should contain at least one Uppercase character.</span>
+    </div>
+       <div id="check6">
+      <i class="far fa-check-circle"></i>  <span>Should contain at least one Lowercase character.</span>
+    </div>
+   
+    </body>
+</html>
